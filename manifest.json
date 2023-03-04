@@ -1,0 +1,26 @@
+{
+    "name": "chrome-extension-auto-complete",
+    "action": {},
+    "manifest_version": 3,
+    "version": "0.1",
+    "description": "A chrome extension for auto complete",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "tabs"
+    ],
+    "host_permissions": [
+        "https://h5mota.com/test.html"
+    ],
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://h5mota.com/test.html"],
+            "js": ["awesomplete.js", "caret_position.js"],
+            "css": ["awesomplete.css"]
+        }
+    ]
+}
